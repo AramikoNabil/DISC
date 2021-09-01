@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Axios from "axios";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.jpg";
 import bg from "../images/picBc.png";

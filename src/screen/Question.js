@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.jpg";
-import icon from "../images/google-drive-document.png";
 import SwipeableButton from "../component/SwipeableButton";
 
 const Question = (props) => {
@@ -43,7 +42,7 @@ const Question = (props) => {
       ],
     },
   ];
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [currentQuestion] = useState(0);
   return (
     <>
       <div className="wrp-outer">

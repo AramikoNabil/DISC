@@ -61,8 +61,8 @@ const SizeToContent = () => {
 
   //   console.log(changeBg + "INI DATAAA");
 
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [contentAnimation, setContentAnimation] = useState(ActionAnimations);
+  const [currentQuestion] = useState(0);
+  const [contentAnimation] = useState(ActionAnimations);
   const [isBg, setBg] = useState();
 
   //   const items = [
@@ -80,14 +80,16 @@ const SizeToContent = () => {
   //     { id: 12, text: "Twelfth", description: "twelfth description" },
   //   ];
 
-  const swipeRightOptions = () => ({
+  const swipeRightOptions = (index) => ({
     content: <ComplexSwipeContent position="left" />,
     actionAnimation: contentAnimation,
-    action: () => changeColor(),
+    action: () => changeColor(index),
   });
 
-  const changeColor = () => {
-    setBg(true);
+  const changeColor = (index) => {
+    console.log("index === ", index);
+    console.log("questions[currentQuestion].answerOptions[index].isDisable === ", questions[currentQuestion].answerOptions[index].isDisable);
+    setQuestions(questions => [...questions, questions[currentQuestion].answerOptions[index].isDisable = true]);
   };
 
   const swipeLeftOptions = () => ({
@@ -98,21 +100,18 @@ const SizeToContent = () => {
   return (
     <div className="size-to-content-swipeable-list__container">
       <SwipeableList>
-        {questions[currentQuestion].answerOptions.map((answerOption) => (
+        {questions[currentQuestion].answerOptions.map((answerOption, index) => (
           <SwipeableListItem
-            // key={answerOption.isDisable}
-            swipeLeft={swipeLeftOptions(answerOption.answerText)}
-            swipeRight={swipeRightOptions(answerOption.answerText)}
+            key={index}
+            swipeLeft={swipeLeftOptions()}
+            swipeRight={swipeRightOptions(index)}
           >
             {/* <ComplexListItem description={description} name={text} /> */}
             <ComplexListItem
               name={answerOption.answerText}
-              s={
-                isBg === true
-                  ? "complex-swipeable-list__item"
-                  : "complex-swipeable-list__itemFalse"
-              }
-            />
+              s={answerOption.isDisable
+                ? "complex-swipeable-list__item"
+                : "complex-swipeable-list__itemFalse"} />
           </SwipeableListItem>
         ))}
       </SwipeableList>
