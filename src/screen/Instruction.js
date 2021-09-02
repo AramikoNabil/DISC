@@ -39,8 +39,8 @@ const Instruction = () => {
                 style={{ display: "flex" }}
               />
               <p style={{ display: "flex", marginLeft: 10 }}>
-                Geser ke kiri untuk pilihan yang menggambarkan dirimu (IYA) dan
-                ke kanan untuk sebalikanya (TIDAK).
+                Geser ke kanan untuk pilihan yang menggambarkan dirimu (IYA) dan
+                ke kiri untuk sebalikanya (TIDAK).
               </p>
             </div>
             <div className="list">

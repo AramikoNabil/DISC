@@ -162,7 +162,7 @@ html {
 }
 .header-test {
   font-family: "open sans", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .bg {
@@ -179,14 +179,45 @@ html {
   max-width: 100%;
   text-decoration: none;
 }
-
+.button-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 2rem 0 2rem 0; */
+  max-width: 100%;
+  text-decoration: none;
+}
 .row-button {
+  text-align: center;
   border-radius: 25px;
   width: 80%;
   height: 40px;
   font-size: 1.3rem;
   color: white;
   font-weight: 700;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    90deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  border: 0px;
+  cursor: pointer;
+  transition: opacity 0.25s ease-out;
+}
+.row-button:disabled,
+.row-button[disabled] {
+  border: 1px solid #999999;
+  background-color: #959595;
+  color: #666666;
+}
+.row-button-submit {
+  border-radius: 25px;
+  width: 60%;
+  height: 35px;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 600;
   background: rgb(34, 193, 195);
   background: linear-gradient(
     90deg,
@@ -224,7 +255,7 @@ html {
 }
 
 .complex-swipeable-list__item-content-left {
-  background-color: red;
+  background-color: #4bf241;
   color: white;
   flex: 1;
   height: 100%;
@@ -234,7 +265,7 @@ html {
 }
 
 .complex-swipeable-list__item-content-right {
-  background-color: green;
+  background-color: #f2414d;
   color: white;
   flex: 1;
   height: 100%;
@@ -284,6 +315,16 @@ html {
   cursor: pointer;
 }
 
+.complex-swipeable-list__itemFalse2 {
+  background-color: yellow;
+  padding: 10px;
+  border-bottom: 1px solid #c4c4c4;
+  flex: 1;
+  min-width: 0;
+  user-select: none;
+  cursor: pointer;
+}
+
 .complex-swipeable-list__item-label {
   display: flex;
   align-items: center;
@@ -320,4 +361,47 @@ html {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.form-div {
+  margin: 50px;
+  border-radius: 10px;
+}
+.form-div,
+.button-div {
+  transition: 0.5s ease-out;
+}
+form {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+input,
+/* button {
+  margin: 5px;
+} */
+
+/*SKELETON CSS*/
+
+/*INPUT STYLING*/
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  font-size: 16px;
+  height: 38px;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border: 1px solid #2bcc9e;
+  outline: 0;
 }
