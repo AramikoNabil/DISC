@@ -320,19 +320,19 @@ const Question = (props) => {
     setVer(true);
   };
 
-  const changeColor2 = (index, isDisable2) => {
-    if (isDisable2) {
-      questions[currentQuestion].answerOptions.map((data, _index) => {
-        _index !== index ? (data.isDisable2 = false) : (data.isDisable2 = true);
-      });
-    }
-    setQuestions((questions) => [
-      ...questions,
-      (questions[currentQuestion].answerOptions[index].isDisable2 = isDisable2),
-    ]);
+  // const changeColor2 = (index, isDisable2) => {
+  //   if (isDisable2) {
+  //     questions[currentQuestion].answerOptions.map((data, _index) => {
+  //       _index !== index ? (data.isDisable2 = false) : (data.isDisable2 = true);
+  //     });
+  //   }
+  //   setQuestions((questions) => [
+  //     ...questions,
+  //     (questions[currentQuestion].answerOptions[index].isDisable2 = isDisable2),
+  //   ]);
 
-    setVer(true);
-  };
+  //   setVer(true);
+  // };
 
   const swipeLeftOptions = (index) => ({
     content: <ComplexSwipeContent position="right" />,

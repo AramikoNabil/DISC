@@ -1,4 +1,4 @@
-import { Home, Instruction, test } from "./Route";
+import { Home, Instruction, test, Login } from "./Route";
 import Wrapper from "../component/Wrapper";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -7,6 +7,7 @@ function AppRouter() {
     <Router>
       <Switch>
         <Route path="/" exact component={Wrapper(Home)} />
+        <Route path="/registration" exact component={Login} />
         <Route path="/instruction" component={Instruction} />
         <Route path="/test" component={test} />
       </Switch>
