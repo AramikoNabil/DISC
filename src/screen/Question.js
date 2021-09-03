@@ -342,9 +342,9 @@ const Question = (props) => {
             </div>
           </div>
           <span style={{ marginLeft: 30 }}>
-            Pernyataan {currentQuestion + 1}.
+            Pernyataan {currentQuestion + 1}
           </span>
-          {/* /{currentQuestion.length} */}
+          /24
           <div className="wrp-intruction">
             <div className="header-test">
               {questions[currentQuestion1].questionText}
