@@ -16,12 +16,13 @@ const Question = (props) => {
   const [questions, setQuestions] = useState(() => [
     {
       questionText:
-        "Pilih 1 opsi yang menggambarkan diri Anda dan 1 opsi tidak menggambarkan diri Anda :",
+        "Geser Kanan yang paling menggambarkan diri Anda, Geser Kiri yang paling tidak menggambarkan diri Anda :",
       answerOptions: [
         {
           id: 1,
           answerText: "Pendiam, tidak banyak bicara",
           isDisable: false,
+          isDisable2: false,
         },
         {
           id: 2,
@@ -39,7 +40,7 @@ const Question = (props) => {
     {
       questionText: "Who is CEO of Tesla?",
       answerOptions: [
-        { answerText: " Mengajak, pemberi semangat ", isDisable: false },
+        { answerText: " Mengajak, pemberi semangat", isDisable: false },
         { answerText: "Mengutamakan kesempurnaan ", isDisable: false },
         { answerText: "Mengikuti pemimpin", isDisable: false },
         { answerText: "Keberhasilan adalah tujuan", isDisable: false },
@@ -295,6 +296,8 @@ const Question = (props) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [currentQuestion1, setCurrentQuestion1] = useState(0);
   const [isVer, setVer] = useState(false);
+  const [isColor, setColor] = useState("white");
+
   const [contentAnimation] = useState(ActionAnimations);
 
   const swipeRightOptions = (index) => ({
@@ -313,6 +316,21 @@ const Question = (props) => {
       ...questions,
       (questions[currentQuestion].answerOptions[index].isDisable = isDisable),
     ]);
+
+    setVer(true);
+  };
+
+  const changeColor2 = (index, isDisable2) => {
+    if (isDisable2) {
+      questions[currentQuestion].answerOptions.map((data, _index) => {
+        _index !== index ? (data.isDisable2 = false) : (data.isDisable2 = true);
+      });
+    }
+    setQuestions((questions) => [
+      ...questions,
+      (questions[currentQuestion].answerOptions[index].isDisable2 = isDisable2),
+    ]);
+
     setVer(true);
   };
 
@@ -363,8 +381,10 @@ const Question = (props) => {
                       /> */}
                       <ComplexListItem
                         name={answerOption.answerText}
-                        s2={
-                          answerOption.isDisable === false
+                        s={
+                          answerOption.isDisable == null
+                            ? "complex-swipeable-list__itemFalse2"
+                            : answerOption.isDisable === false
                             ? "complex-swipeable-list__item"
                             : "complex-swipeable-list__itemFalse"
                         }
@@ -406,7 +426,7 @@ const Question = (props) => {
 };
 
 const ComplexListItem = (props) => (
-  <div className={props.s2}>
+  <div className={props.s}>
     <div className="complex-swipeable-list__item-label">
       <span className="complex-swipeable-list__item-icon">{props.icon}</span>
       <span className="complex-swipeable-list__item-name">{props.name}</span>

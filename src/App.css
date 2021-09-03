@@ -307,7 +307,7 @@ html {
 }
 
 .complex-swipeable-list__itemFalse {
-  background-color: #dcdcdc;
+  background-color: #84e77f;
   padding: 10px;
   border-bottom: 1px solid #c4c4c4;
   flex: 1;
@@ -317,7 +317,7 @@ html {
 }
 
 .complex-swipeable-list__itemFalse2 {
-  background-color: yellow;
+  background-color: #ec4b56;
   padding: 10px;
   border-bottom: 1px solid #c4c4c4;
   flex: 1;
