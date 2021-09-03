@@ -16,7 +16,7 @@ const Question = (props) => {
   const [questions, setQuestions] = useState(() => [
     {
       questionText:
-        "Pilih opsi yang menggambarkan diri Anda dan yang tidak menggambarkan diri Anda :",
+        "Pilih 1 opsi yang menggambarkan diri Anda dan 1 opsi tidak menggambarkan diri Anda :",
       answerOptions: [
         {
           id: 1,
@@ -72,6 +72,16 @@ const Question = (props) => {
         { answerText: "Berani menghadapi sesuatu", isDisable: false },
       ],
     },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Mau mengalah dengan sesama", isDisable: false },
+        { answerText: "Peraturan itu membosankan", isDisable: false },
+        { answerText: "Suka memaksa", isDisable: false },
+        { answerText: "Memiliki standar yang tinggi", isDisable: false },
+      ],
+    },
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
@@ -88,6 +98,197 @@ const Question = (props) => {
         { answerText: "Penghargaan akan kemenangan", isDisable: false },
         { answerText: "Tenang, tidak terburu-buru", isDisable: false },
         { answerText: "Bersahabat, dikenal banyak orang", isDisable: false },
+      ],
+    },
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Bertanggung jawab akan tugas", isDisable: false },
+        { answerText: "Mudah mengekspresikan sesuatu", isDisable: false },
+        { answerText: "Mudah ditebak, konsisten", isDisable: false },
+        { answerText: "Selalu berhati-hati, waspada", isDisable: false },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Tidak mudah menyerahs", isDisable: false },
+        { answerText: "Menjadi anggota kelompok", isDisable: false },
+        { answerText: "Periang dan selalu ceria", isDisable: false },
+        { answerText: "Semuanya teratur rapi", isDisable: false },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Senang mengarahkan, memimpin", isDisable: false },
+        { answerText: "Mengendalikan diri", isDisable: false },
+        { answerText: "Dapat membujuk orang lain", isDisable: false },
+        { answerText: "Cara berpikirnya sistematis, logis", isDisable: false },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Tulus, tidak berprasangka buruk", isDisable: false },
+        { answerText: "Ketawa lepas, tidak ditahan-tahan", isDisable: false },
+        { answerText: "Berani, tegas", isDisable: false },
+        { answerText: "Tenang, hati-hati, serius", isDisable: false },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Kemauan yang keras", isDisable: false },
+        { answerText: "Suka dengan hal baru", isDisable: false },
+        { answerText: "Menolak perubahan mendadak", isDisable: false },
+        { answerText: "Mempersiapkan masa depan", isDisable: false },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Penyemangat yang baik", isDisable: false },
+        { answerText: "Sabar mendengarkan pembicaraan", isDisable: false },
+        { answerText: "Peraturan itu untuk keadilan", isDisable: false },
+        {
+          answerText: "Mandiri, tidak tergantung orang lain",
+          isDisable: false,
+        },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Suka menyenangkan orang lain", isDisable: false },
+        { answerText: "Suka mengambil keputusan", isDisable: false },
+        { answerText: "Bersemangat dan optimis", isDisable: false },
+        {
+          answerText: "Mengutamakan fakta, data",
+          isDisable: false,
+        },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Ramah, lemah lembut", isDisable: false },
+        { answerText: "Berpikir positif, bersemangat", isDisable: false },
+        { answerText: "Suka mengambil risiko", isDisable: false },
+        {
+          answerText: "Bekerja sesuai perintah",
+          isDisable: false,
+        },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "	Hati-hati, kontrol diri ketat", isDisable: false },
+        { answerText: "Berkata sesuai yang dipikirkan", isDisable: false },
+        { answerText: "Tidak mudah cemas akan sesuatu", isDisable: false },
+        {
+          answerText: "Jika berbelanja sesuai keinginan",
+          isDisable: false,
+        },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Ramah, mudah berteman", isDisable: false },
+        { answerText: "Cepat bosan dengan hal-hal rutin", isDisable: false },
+        { answerText: "Suka berubah-ubah", isDisable: false },
+        {
+          answerText: "Menginginkan kepastian",
+          isDisable: false,
+        },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Mengalah, menghindari konflik", isDisable: false },
+        { answerText: "Hal-hal kecil menjadi perhatian", isDisable: false },
+        { answerText: "Berubah pada saat-saat akhir", isDisable: false },
+        {
+          answerText: "Suka tantangan baru",
+          isDisable: false,
+        },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Pendiam tidak suka berbicara", isDisable: false },
+        { answerText: "Riang, suka berbicara", isDisable: false },
+        { answerText: "Cepat merasa puas", isDisable: false },
+        {
+          answerText: "Cepat memutuskan, tegas",
+          isDisable: false,
+        },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Mampu sabar dalam menunggu", isDisable: false },
+        { answerText: "Menginginkan petunjuk yang jelas", isDisable: false },
+        { answerText: "Suka bercanda", isDisable: false },
+        {
+          answerText: "Jika ada keinginan harus dipenuhi",
+          isDisable: false,
+        },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Peraturan itu menghambat", isDisable: false },
+        { answerText: "Suka menganalisa sampai detil", isDisable: false },
+        { answerText: "Unik, beda dengan yang lain", isDisable: false },
+        {
+          answerText: "Bisa diharapkan bantuannya",
+          isDisable: false,
+        },
+      ],
+    },
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Barani mengambil risiko", isDisable: false },
+        { answerText: "Menyenangkan, suka membantu", isDisable: false },
+        { answerText: "Mudah mengemukakan perasaan", isDisable: false },
+        {
+          answerText: "Rendah hati, sederhana",
+          isDisable: false,
+        },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        { answerText: "Mengutamakan hasil", isDisable: false },
+        { answerText: "Menginginkan akurasi, ketepatan", isDisable: false },
+        { answerText: "Betah berbicara lama", isDisable: false },
+        {
+          answerText: "Suka berkelompok, bersama-sama",
+          isDisable: false,
+        },
       ],
     },
   ]);
@@ -141,9 +342,9 @@ const Question = (props) => {
             </div>
           </div>
           <span style={{ marginLeft: 30 }}>
-            Pernyataan {currentQuestion + 1}
+            Pernyataan {currentQuestion + 1}.
           </span>
-          /{questions.length}
+          {/* /{currentQuestion.length} */}
           <div className="wrp-intruction">
             <div className="header-test">
               {questions[currentQuestion1].questionText}
@@ -157,9 +358,9 @@ const Question = (props) => {
                       swipeLeft={swipeLeftOptions(index)}
                       swipeRight={swipeRightOptions(index)}
                     >
-                      <ComplexListItem
+                      {/* <ComplexListItem
                         description={answerOption.isDisable ? "+" : null}
-                      />
+                      /> */}
                       <ComplexListItem
                         name={answerOption.answerText}
                         s2={
@@ -180,13 +381,23 @@ const Question = (props) => {
             </div> */}
           </div>
           <div className="button">
-            <button
-              onClick={() => handleAnswerOptionClick()}
-              disabled={!isVer}
-              className="row-button"
-            >
-              Next
-            </button>
+            {currentQuestion + 1 === 24 ? (
+              <button
+                // onClick={() => handleAnswerOptionClick()}
+                disabled={!isVer}
+                className="row-button"
+              >
+                Finish
+              </button>
+            ) : (
+              <button
+                onClick={() => handleAnswerOptionClick()}
+                disabled={!isVer}
+                className="row-button"
+              >
+                Next
+              </button>
+            )}
           </div>
         </div>
       </div>
