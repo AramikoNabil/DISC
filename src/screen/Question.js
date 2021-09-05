@@ -28,13 +28,21 @@ const Question = (props) => {
           id: 2,
           answerText: "Berjuang mencapai hasil",
           isDisable: false,
+          isDisable2: false,
         },
         {
           id: 3,
           answerText: "Mudah bergaul dengan orang baru",
           isDisable: false,
+          isDisable2: false,
         },
-        { id: 4, answerText: "Berusaha menyenangkan orang", isDisable: false },
+
+        {
+          id: 4,
+          answerText: "Berusaha menyenangkan orang",
+          isDisable: false,
+          isDisable2: false,
+        },
       ],
     },
     {
@@ -296,7 +304,6 @@ const Question = (props) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [currentQuestion1, setCurrentQuestion1] = useState(0);
   const [isVer, setVer] = useState(false);
-  const [isColor, setColor] = useState("white");
 
   const [contentAnimation] = useState(ActionAnimations);
 
@@ -317,27 +324,27 @@ const Question = (props) => {
       (questions[currentQuestion].answerOptions[index].isDisable = isDisable),
     ]);
 
-    setVer(true);
+    // setVer(true);
   };
 
-  // const changeColor2 = (index, isDisable2) => {
-  //   if (isDisable2) {
-  //     questions[currentQuestion].answerOptions.map((data, _index) => {
-  //       _index !== index ? (data.isDisable2 = false) : (data.isDisable2 = true);
-  //     });
-  //   }
-  //   setQuestions((questions) => [
-  //     ...questions,
-  //     (questions[currentQuestion].answerOptions[index].isDisable2 = isDisable2),
-  //   ]);
+  const changeColor2 = (index, isDisable2) => {
+    if (isDisable2) {
+      questions[currentQuestion].answerOptions.map((data, _index) => {
+        _index !== index ? (data.isDisable2 = false) : (data.isDisable2 = true);
+      });
+    }
+    setQuestions((questions) => [
+      ...questions,
+      (questions[currentQuestion].answerOptions[index].isDisable2 = isDisable2),
+    ]);
 
-  //   setVer(true);
-  // };
+    setVer(true);
+  };
 
   const swipeLeftOptions = (index) => ({
     content: <ComplexSwipeContent position="right" />,
     contentAnimation: contentAnimation,
-    action: () => changeColor(index),
+    action: () => changeColor2(index, true),
   });
 
   const handleAnswerOptionClick = () => {
@@ -381,13 +388,15 @@ const Question = (props) => {
                       /> */}
                       <ComplexListItem
                         name={answerOption.answerText}
-                        s={
-                          answerOption.isDisable == null
-                            ? "complex-swipeable-list__itemFalse2"
-                            : answerOption.isDisable === false
-                            ? "complex-swipeable-list__item"
-                            : "complex-swipeable-list__itemFalse"
+                        disable={
+                          answerOption.isDisable !== false
+                            ? "False"
+                            : answerOption.isDisable2 !== false
+                            ? "False2"
+                            : "None"
                         }
+
+                        // let a = {answerOption.isDisable === false ? disable ={"false"} : null }
                       />
                     </SwipeableListItem>
                   )
@@ -426,7 +435,7 @@ const Question = (props) => {
 };
 
 const ComplexListItem = (props) => (
-  <div className={props.s}>
+  <div className={`complex-swipeable-list__item-${props.disable}`}>
     <div className="complex-swipeable-list__item-label">
       <span className="complex-swipeable-list__item-icon">{props.icon}</span>
       <span className="complex-swipeable-list__item-name">{props.name}</span>

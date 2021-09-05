@@ -7,7 +7,7 @@ function AppRouter() {
     <Router>
       <Switch>
         <Route path="/" exact component={Wrapper(Home)} />
-        <Route path="/registration" exact component={Login} />
+        <Route path="/registration" exact component={Wrapper(Login)} />
         <Route path="/instruction" component={Instruction} />
         <Route path="/test" component={test} />
       </Switch>

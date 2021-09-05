@@ -187,6 +187,48 @@ html {
   max-width: 100%;
   text-decoration: none;
 }
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  max-width: 100%;
+}
+
+.row input {
+  width: 80%;
+  box-sizing: border-box;
+  border: none;
+  font-size: 1rem;
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
+  box-shadow: inset 0px -3px 0px 0px rgba(187, 187, 187, 0.2);
+  transition: box-shadow 0.2s ease-in;
+}
+
+.row input:focus {
+  box-shadow: inset 0px -3px 0px 0px rgba(34, 193, 195, 0.7);
+  outline: none;
+}
+
+.row input::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.25s ease-out;
+}
+
+.row input:hover::-webkit-input-placeholder,
+.row input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.row label {
+  align-self: start;
+  padding-left: 4.5rem;
+  padding-bottom: 0.5rem;
+  color: rgba(187, 187, 187, 0.9);
+}
+
 .row-button {
   line-height: 40px;
   text-align: center;
@@ -296,7 +338,7 @@ html {
   margin-top: -4px;
 }
 
-.complex-swipeable-list__item {
+.complex-swipeable-list__item-None {
   background-color: white;
   padding: 10px;
   border-bottom: 1px solid #c4c4c4;
@@ -306,7 +348,7 @@ html {
   cursor: pointer;
 }
 
-.complex-swipeable-list__itemFalse {
+.complex-swipeable-list__item-False {
   background-color: #84e77f;
   padding: 10px;
   border-bottom: 1px solid #c4c4c4;
@@ -316,7 +358,7 @@ html {
   cursor: pointer;
 }
 
-.complex-swipeable-list__itemFalse2 {
+.complex-swipeable-list__item-False2 {
   background-color: #ec4b56;
   padding: 10px;
   border-bottom: 1px solid #c4c4c4;
@@ -405,4 +447,53 @@ input[type="password"]:focus,
 textarea:focus {
   border: 1px solid #2bcc9e;
   outline: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  max-width: 100%;
+}
+
+.row input {
+  width: 80%;
+  box-sizing: border-box;
+  border: none;
+  font-size: 16px;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: inset 0px -3px 0px 0px rgba(187, 187, 187, 0.2);
+  transition: box-shadow 0.2s ease-in;
+}
+
+.row input:focus {
+  box-shadow: inset 0px -3px 0px 0px rgba(34, 193, 195, 0.7);
+  outline: none;
+}
+
+.row input::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.25s ease-out;
+}
+
+.row input:hover::-webkit-input-placeholder,
+.row input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.label1 {
+  align-self: start;
+  padding-left: 3.5rem;
+  padding-bottom: 0.5rem;
+  color: rgba(80, 75, 75, 0.9);
+}
+
+.label2 {
+  align-self: start;
+  padding-left: 3.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 10px;
+  color: rgba(80, 75, 75, 0.9);
 }
