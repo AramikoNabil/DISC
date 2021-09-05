@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.jpg";
 import bg from "../images/picBc.png";
-import "react-responsive-modal/styles.css";
-import { Modal } from "react-responsive-modal";
+
 const Home = () => {
   return (
     <>
