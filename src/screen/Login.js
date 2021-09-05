@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import logo from "../images/logo.jpg";
 import "react-datepicker/dist/react-datepicker.css";
-import DatePicker from "react-datepicker";
 import Loading from "../component/PreLoader";
 import Axios from "axios";
 
