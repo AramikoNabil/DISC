@@ -48,126 +48,323 @@ const Question = (props) => {
     {
       questionText: "Who is CEO of Tesla?",
       answerOptions: [
-        { answerText: " Mengajak, pemberi semangat", isDisable: false },
-        { answerText: "Mengutamakan kesempurnaan ", isDisable: false },
-        { answerText: "Mengikuti pemimpin", isDisable: false },
-        { answerText: "Keberhasilan adalah tujuan", isDisable: false },
+        {
+          answerText: " Mengajak, pemberi semangat",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Mengutamakan kesempurnaan ",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Mengikuti pemimpin",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Keberhasilan adalah tujuan",
+          isDisable: false,
+          isDisable2: false,
+        },
       ],
     },
     {
       questionText: "The iPhone was created by which company?",
       answerOptions: [
-        { answerText: "Mudah kecewa, patah semangat", isDisable: false },
-        { answerText: "Senang membantu sesama", isDisable: false },
-        { answerText: "Suka bercerita tentang diri sendiri", isDisable: false },
-        { answerText: "Memihak kepada oposisi  ", isDisable: false },
+        {
+          answerText: "Mudah kecewa, patah semangat",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Senang membantu sesama",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Suka bercerita tentang diri sendiri",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Memihak kepada oposisi  ",
+          isDisable: false,
+          isDisable2: false,
+        },
       ],
     },
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
-        { answerText: "Mengatur waktu secara efisien  ", isDisable: false },
-        { answerText: "Buru-buru ingin cepat selesai   ", isDisable: false },
-        { answerText: "Pandai bergaul, banyak teman  ", isDisable: false },
-        { answerText: "Mengerjakan sampai selesai  ", isDisable: false },
+        {
+          answerText: "Mengatur waktu secara efisien  ",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Buru-buru ingin cepat selesai   ",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Pandai bergaul, banyak teman  ",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Mengerjakan sampai selesai  ",
+          isDisable: false,
+          isDisable2: false,
+        },
       ],
     },
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
-        { answerText: "Menghindari konflik", isDisable: false },
-        { answerText: "Suka membuat janji", isDisable: false },
-        { answerText: "Bekerja runtut, sesuai aturan", isDisable: false },
-        { answerText: "Berani menghadapi sesuatu", isDisable: false },
-      ],
-    },
-
-    {
-      questionText: "How many Harry Potter books are there?",
-      answerOptions: [
-        { answerText: "Mau mengalah dengan sesama", isDisable: false },
-        { answerText: "Peraturan itu membosankan", isDisable: false },
-        { answerText: "Suka memaksa", isDisable: false },
-        { answerText: "Memiliki standar yang tinggi", isDisable: false },
-      ],
-    },
-    {
-      questionText: "How many Harry Potter books are there?",
-      answerOptions: [
-        { answerText: "Bersemangat, aktif", isDisable: false },
-        { answerText: "Bekerja cepat, ingin menang", isDisable: false },
-        { answerText: "Mengindari pertengkaran", isDisable: false },
-        { answerText: "Menyendiri jika stress", isDisable: false },
-      ],
-    },
-    {
-      questionText: "How many Harry Potter books are there?",
-      answerOptions: [
-        { answerText: "Takut mengambil keputusan", isDisable: false },
-        { answerText: "Penghargaan akan kemenangan", isDisable: false },
-        { answerText: "Tenang, tidak terburu-buru", isDisable: false },
-        { answerText: "Bersahabat, dikenal banyak orang", isDisable: false },
-      ],
-    },
-    {
-      questionText: "How many Harry Potter books are there?",
-      answerOptions: [
-        { answerText: "Bertanggung jawab akan tugas", isDisable: false },
-        { answerText: "Mudah mengekspresikan sesuatu", isDisable: false },
-        { answerText: "Mudah ditebak, konsisten", isDisable: false },
-        { answerText: "Selalu berhati-hati, waspada", isDisable: false },
-      ],
-    },
-
-    {
-      questionText: "How many Harry Potter books are there?",
-      answerOptions: [
-        { answerText: "Tidak mudah menyerahs", isDisable: false },
-        { answerText: "Menjadi anggota kelompok", isDisable: false },
-        { answerText: "Periang dan selalu ceria", isDisable: false },
-        { answerText: "Semuanya teratur rapi", isDisable: false },
-      ],
-    },
-
-    {
-      questionText: "How many Harry Potter books are there?",
-      answerOptions: [
-        { answerText: "Senang mengarahkan, memimpin", isDisable: false },
-        { answerText: "Mengendalikan diri", isDisable: false },
-        { answerText: "Dapat membujuk orang lain", isDisable: false },
-        { answerText: "Cara berpikirnya sistematis, logis", isDisable: false },
+        {
+          answerText: "Menghindari konflik",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Suka membuat janji",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Bekerja runtut, sesuai aturan",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Berani menghadapi sesuatu",
+          isDisable: false,
+          isDisable2: false,
+        },
       ],
     },
 
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
-        { answerText: "Tulus, tidak berprasangka buruk", isDisable: false },
-        { answerText: "Ketawa lepas, tidak ditahan-tahan", isDisable: false },
-        { answerText: "Berani, tegas", isDisable: false },
-        { answerText: "Tenang, hati-hati, serius", isDisable: false },
+        {
+          answerText: "Mau mengalah dengan sesama",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Peraturan itu membosankan",
+          isDisable: false,
+          isDisable2: false,
+        },
+        { answerText: "Suka memaksa", isDisable: false, isDisable2: false },
+        {
+          answerText: "Memiliki standar yang tinggi",
+          isDisable: false,
+          isDisable2: false,
+        },
+      ],
+    },
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        {
+          answerText: "Bersemangat, aktif",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Bekerja cepat, ingin menang",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Mengindari pertengkaran",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Menyendiri jika stress",
+          isDisable: false,
+          isDisable2: false,
+        },
+      ],
+    },
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        {
+          answerText: "Takut mengambil keputusan",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Penghargaan akan kemenangan",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Tenang, tidak terburu-buru",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Bersahabat, dikenal banyak orang",
+          isDisable: false,
+          isDisable2: false,
+        },
+      ],
+    },
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        {
+          answerText: "Bertanggung jawab akan tugas",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Mudah mengekspresikan sesuatu",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Mudah ditebak, konsisten",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Selalu berhati-hati, waspada",
+          isDisable: false,
+          isDisable2: false,
+        },
       ],
     },
 
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
-        { answerText: "Kemauan yang keras", isDisable: false },
-        { answerText: "Suka dengan hal baru", isDisable: false },
-        { answerText: "Menolak perubahan mendadak", isDisable: false },
-        { answerText: "Mempersiapkan masa depan", isDisable: false },
+        {
+          answerText: "Tidak mudah menyerahs",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Menjadi anggota kelompok",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Periang dan selalu ceria",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Semuanya teratur rapi",
+          isDisable: false,
+          isDisable2: false,
+        },
       ],
     },
 
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
-        { answerText: "Penyemangat yang baik", isDisable: false },
-        { answerText: "Sabar mendengarkan pembicaraan", isDisable: false },
-        { answerText: "Peraturan itu untuk keadilan", isDisable: false },
+        {
+          answerText: "Senang mengarahkan, memimpin",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Mengendalikan diri",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Dapat membujuk orang lain",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Cara berpikirnya sistematis, logis",
+          isDisable: false,
+          isDisable2: false,
+        },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        {
+          answerText: "Tulus, tidak berprasangka buruk",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Ketawa lepas, tidak ditahan-tahan",
+          isDisable: false,
+          isDisable2: false,
+        },
+        { answerText: "Berani, tegas", isDisable: false, isDisable2: false },
+        {
+          answerText: "Tenang, hati-hati, serius",
+          isDisable: false,
+          isDisable2: false,
+        },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        {
+          answerText: "Kemauan yang keras",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Suka dengan hal baru",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Menolak perubahan mendadak",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Mempersiapkan masa depan",
+          isDisable: false,
+          isDisable2: false,
+        },
+      ],
+    },
+
+    {
+      questionText: "How many Harry Potter books are there?",
+      answerOptions: [
+        {
+          answerText: "Penyemangat yang baik",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Sabar mendengarkan pembicaraan",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Peraturan itu untuk keadilan",
+          isDisable: false,
+          isDisable2: false,
+        },
         {
           answerText: "Mandiri, tidak tergantung orang lain",
           isDisable: false,
+          isDisable2: false,
         },
       ],
     },
@@ -175,12 +372,25 @@ const Question = (props) => {
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
-        { answerText: "Suka menyenangkan orang lain", isDisable: false },
-        { answerText: "Suka mengambil keputusan", isDisable: false },
-        { answerText: "Bersemangat dan optimis", isDisable: false },
+        {
+          answerText: "Suka menyenangkan orang lain",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Suka mengambil keputusan",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Bersemangat dan optimis",
+          isDisable: false,
+          isDisable2: false,
+        },
         {
           answerText: "Mengutamakan fakta, data",
           isDisable: false,
+          isDisable2: false,
         },
       ],
     },
@@ -188,12 +398,25 @@ const Question = (props) => {
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
-        { answerText: "Ramah, lemah lembut", isDisable: false },
-        { answerText: "Berpikir positif, bersemangat", isDisable: false },
-        { answerText: "Suka mengambil risiko", isDisable: false },
+        {
+          answerText: "Ramah, lemah lembut",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Berpikir positif, bersemangat",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Suka mengambil risiko",
+          isDisable: false,
+          isDisable2: false,
+        },
         {
           answerText: "Bekerja sesuai perintah",
           isDisable: false,
+          isDisable2: false,
         },
       ],
     },
@@ -201,25 +424,50 @@ const Question = (props) => {
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
-        { answerText: "	Hati-hati, kontrol diri ketat", isDisable: false },
-        { answerText: "Berkata sesuai yang dipikirkan", isDisable: false },
-        { answerText: "Tidak mudah cemas akan sesuatu", isDisable: false },
+        {
+          answerText: "	Hati-hati, kontrol diri ketat",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Berkata sesuai yang dipikirkan",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Tidak mudah cemas akan sesuatu",
+          isDisable: false,
+          isDisable2: false,
+        },
         {
           answerText: "Jika berbelanja sesuai keinginan",
           isDisable: false,
+          isDisable2: false,
         },
       ],
     },
-
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
-        { answerText: "Ramah, mudah berteman", isDisable: false },
-        { answerText: "Cepat bosan dengan hal-hal rutin", isDisable: false },
-        { answerText: "Suka berubah-ubah", isDisable: false },
         {
-          answerText: "Menginginkan kepastian",
+          answerText: "Ramah, mudah berteman",
           isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Cepat bosan dengan hal-hal rutin",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Suka berubah-ubah",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Menginginkan kepas",
+          isDisable: false,
+          isDisable2: false,
         },
       ],
     },
@@ -227,12 +475,25 @@ const Question = (props) => {
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
-        { answerText: "Mengalah, menghindari konflik", isDisable: false },
-        { answerText: "Hal-hal kecil menjadi perhatian", isDisable: false },
-        { answerText: "Berubah pada saat-saat akhir", isDisable: false },
+        {
+          answerText: "Mengalah, menghindari konflik",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Hal-hal kecil menjadi perhatian",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Berubah pada saat-saat akhir",
+          isDisable: false,
+          isDisable2: false,
+        },
         {
           answerText: "Suka tantangan baru",
           isDisable: false,
+          isDisable2: false,
         },
       ],
     },
@@ -240,12 +501,25 @@ const Question = (props) => {
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
-        { answerText: "Pendiam tidak suka berbicara", isDisable: false },
-        { answerText: "Riang, suka berbicara", isDisable: false },
-        { answerText: "Cepat merasa puas", isDisable: false },
+        {
+          answerText: "Pendiam tidak suka berbicara",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Riang, suka berbicara",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Cepat merasa puas",
+          isDisable: false,
+          isDisable2: false,
+        },
         {
           answerText: "Cepat memutuskan, tegas",
           isDisable: false,
+          isDisable2: false,
         },
       ],
     },
@@ -253,12 +527,21 @@ const Question = (props) => {
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
-        { answerText: "Mampu sabar dalam menunggu", isDisable: false },
-        { answerText: "Menginginkan petunjuk yang jelas", isDisable: false },
-        { answerText: "Suka bercanda", isDisable: false },
+        {
+          answerText: "Mampu sabar dalam menunggu",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Menginginkan petunjuk yang jelas",
+          isDisable: false,
+          isDisable2: false,
+        },
+        { answerText: "Suka bercanda", isDisable: false, isDisable2: false },
         {
           answerText: "Jika ada keinginan harus dipenuhi",
           isDisable: false,
+          isDisable2: false,
         },
       ],
     },
@@ -266,24 +549,50 @@ const Question = (props) => {
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
-        { answerText: "Peraturan itu menghambat", isDisable: false },
-        { answerText: "Suka menganalisa sampai detil", isDisable: false },
-        { answerText: "Unik, beda dengan yang lain", isDisable: false },
+        {
+          answerText: "Peraturan itu menghambat",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Suka menganalisa sampai detil",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Unik, beda dengan yang lain",
+          isDisable: false,
+          isDisable2: false,
+        },
         {
           answerText: "Bisa diharapkan bantuannya",
           isDisable: false,
+          isDisable2: false,
         },
       ],
     },
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
-        { answerText: "Barani mengambil risiko", isDisable: false },
-        { answerText: "Menyenangkan, suka membantu", isDisable: false },
-        { answerText: "Mudah mengemukakan perasaan", isDisable: false },
+        {
+          answerText: "Barani mengambil risiko",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Menyenangkan, suka membantu",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Mudah mengemukakan perasaan",
+          isDisable: false,
+          isDisable2: false,
+        },
         {
           answerText: "Rendah hati, sederhana",
           isDisable: false,
+          isDisable2: false,
         },
       ],
     },
@@ -291,12 +600,25 @@ const Question = (props) => {
     {
       questionText: "How many Harry Potter books are there?",
       answerOptions: [
-        { answerText: "Mengutamakan hasil", isDisable: false },
-        { answerText: "Menginginkan akurasi, ketepatan", isDisable: false },
-        { answerText: "Betah berbicara lama", isDisable: false },
+        {
+          answerText: "Mengutamakan hasil",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Menginginkan akurasi, ketepatan",
+          isDisable: false,
+          isDisable2: false,
+        },
+        {
+          answerText: "Betah berbicara lama",
+          isDisable: false,
+          isDisable2: false,
+        },
         {
           answerText: "Suka berkelompok, bersama-sama",
           isDisable: false,
+          isDisable2: false,
         },
       ],
     },
