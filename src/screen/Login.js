@@ -162,7 +162,7 @@ const Login = () => {
       </div>
       <div className="button">
         <button onClick={Create} disabled={isLoading} className="row-button">
-          Login
+          Next
         </button>
       </div>
     </div>
