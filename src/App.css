@@ -135,7 +135,9 @@ body {
   );
   font-family: "work sans";
 }
-
+.snackbar {
+  bottom: 90;
+}
 html {
   font-size: 100%;
 }
@@ -196,7 +198,7 @@ html {
   max-width: 100%;
 }
 
-.row input {
+.input {
   width: 80%;
   box-sizing: border-box;
   border: none;
@@ -207,18 +209,18 @@ html {
   transition: box-shadow 0.2s ease-in;
 }
 
-.row input:focus {
+.input:focus {
   box-shadow: inset 0px -3px 0px 0px rgba(34, 193, 195, 0.7);
   outline: none;
 }
 
-.row input::-webkit-input-placeholder {
+.input::-webkit-input-placeholder {
   opacity: 1;
   transition: opacity 0.25s ease-out;
 }
 
-.row input:hover::-webkit-input-placeholder,
-.row input:focus::-webkit-input-placeholder {
+.input:hover::-webkit-input-placeholder,
+.input:focus::-webkit-input-placeholder {
   opacity: 0;
 }
 

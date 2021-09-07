@@ -3,6 +3,9 @@ import logo from "../images/logo.jpg";
 import "react-datepicker/dist/react-datepicker.css";
 import Loading from "../component/PreLoader";
 import Axios from "axios";
+import Snackbar from "@material-ui/core/Snackbar";
+import Button from "@material-ui/core/Button";
+import MuiAlert from "@material-ui/lab/Alert";
 
 // const Login = (props) => <LoginForm />;
 const Login = () => {
@@ -11,8 +14,9 @@ const Login = () => {
   const [isEmail, setEmail] = useState("");
   const [isGender, setGender] = useState("");
   const [isLoading, setLoading] = useState(false);
-  const [regexp] = useState(/^[0-9\b]+$/);
   const [btn, setBtn] = useState(false);
+  const [isError, setError] = useState("");
+  const [open, setOpen] = React.useState(false);
 
   const Create = (props) => {
     if (isEmail !== "" && isName !== "" && isGender !== "") {
@@ -35,18 +39,18 @@ const Login = () => {
               setStartDate("");
               Go_To();
               // setLoading(false);
-            } else if (api.code === 400) {
-              setEmail("");
-              setName("");
-              setGender("");
-              setStartDate("");
-              setLoading(false);
             }
           }
         })
         .catch((error) => {
+          setEmail("");
+          setName("");
+          setGender("");
+          setStartDate("");
+          setError("Erro! Try again");
           setLoading(false);
-          console.log(error);
+          setOpen(true);
+          console.log(error.response.data.data, "INI ERROR");
         });
     } else {
     }
@@ -72,11 +76,20 @@ const Login = () => {
     setGender((e.target.value = "perempuan"));
   };
 
-  const handleChangeDate = (e) => {
-    if (startDate === "" || !regexp.test(startDate)) {
-      setStartDate(e.target.value);
-    }
+  const handleChangeStartDate = (e) => {
+    setStartDate(e.target.value);
   };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
+
+  function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+  }
 
   if (isLoading) {
     return <Loading />;
@@ -90,17 +103,18 @@ const Login = () => {
           <img src={logo} width="70" height="60" alt="icon" />
         </div>
       </div>
-      <div className="row">
-        <div className="label1">Nama Lengkap</div>
-
+      <div noValidate autoComplete="off" className="row">
+        <div className="label1">Nama Lengkap*</div>
         <input
           value={isName}
           onChange={handleChangeName}
           placeholder="Enter your Full Name"
           type="text"
         />
-        <div className="label2">Email</div>
+        <div className="label2">Email*</div>
+
         <input
+          required
           value={isEmail}
           onChange={handleChangeEmail}
           placeholder="Enter your Email"
@@ -144,13 +158,11 @@ const Login = () => {
           <label for="Perempuan">Perempuan</label>
         </div>
 
-        <div style={{ marginTop: 10, marginBottom: 5 }}>Tanggal lahir:</div>
+        <div style={{ marginTop: 10, marginBottom: 5 }}>Tanggal lahir*:</div>
         <input
           value={startDate}
-          onChange={(event) =>
-            setStartDate(event.target.value.replace(/\D/, ""))
-          }
-          // onChange={handleChangeDate}
+          // onChange={(event) => setStartDate(event.target.value)}
+          onChange={handleChangeStartDate}
           placeholder="yyyy-mm-dd"
           type="text"
         />
@@ -164,6 +176,11 @@ const Login = () => {
         <button onClick={Create} disabled={isLoading} className="row-button">
           Next
         </button>
+        <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="error">
+            {isError}
+          </Alert>
+        </Snackbar>
       </div>
     </div>
   );
