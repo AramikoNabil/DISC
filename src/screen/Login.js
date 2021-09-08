@@ -4,12 +4,14 @@ import "react-datepicker/dist/react-datepicker.css";
 import Loading from "../component/PreLoader";
 import Axios from "axios";
 import Snackbar from "@material-ui/core/Snackbar";
-import Button from "@material-ui/core/Button";
+import DatePicker from "react-datepicker";
 import MuiAlert from "@material-ui/lab/Alert";
+import moment from "moment";
 
 // const Login = (props) => <LoginForm />;
 const Login = () => {
-  const [startDate, setStartDate] = useState("");
+  const [startDate, setStartDate] = useState(new Date());
+  const [isDate, setDate] = useState(new Date());
   const [isName, setName] = useState("");
   const [isEmail, setEmail] = useState("");
   const [isGender, setGender] = useState("");
@@ -25,7 +27,7 @@ const Login = () => {
         name: isName,
         email: isEmail,
         gender: isGender,
-        birth_date: startDate,
+        birth_date: isDate,
       })
         .then((responseJson) => {
           console.log(responseJson.data.message);
@@ -59,9 +61,10 @@ const Login = () => {
   const Go_To = () => {
     setTimeout(() => {
       window.location = "/instruction";
-    }, 3000);
+    }, 1000);
   };
-  console.log(startDate);
+  console.log(moment(startDate).format("YYYY-MM-DD"));
+  console.log(startDate, "INI");
 
   const handleChangeName = (e) => {
     setName(e.target.value);
@@ -76,9 +79,11 @@ const Login = () => {
     setGender((e.target.value = "perempuan"));
   };
 
-  const handleChangeStartDate = (e) => {
-    setStartDate(e.target.value);
+  const handleChangeStartDate = (date) => {
+    setStartDate(date);
+    setDate(moment(startDate).format("YYYY-MM-DD"));
   };
+  console.log(isDate, "INI DATE");
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -159,18 +164,25 @@ const Login = () => {
         </div>
 
         <div style={{ marginTop: 10, marginBottom: 5 }}>Tanggal lahir*:</div>
-        <input
+        {/* <input
           value={startDate}
           // onChange={(event) => setStartDate(event.target.value)}
           onChange={handleChangeStartDate}
           placeholder="yyyy-mm-dd"
           type="text"
-        />
-        {/* <DatePicker
-          dateFormat="yyyy/MM/dd"
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
         /> */}
+        <DatePicker
+          required
+          dateFormat="yyyy/MM/dd"
+          placeholderText="yyyy-mm-dd"
+          selected={startDate}
+          peekNextMonth
+          showMonthDropdown
+          showYearDropdown
+          dropdownMode="select"
+          // onChange={(date) => setStartDate(moment(date).format("YYYY-MM-DD"))}
+          onChange={handleChangeStartDate}
+        />
       </div>
       <div className="button">
         <button onClick={Create} disabled={isLoading} className="row-button">
