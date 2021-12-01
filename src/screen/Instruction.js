@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../images/logo.jpg";
+//import logo from "../images/logo.jpg";
 import icon from "../images/google-drive-document.png";
 
 const Instruction = () => {
@@ -8,12 +8,8 @@ const Instruction = () => {
     <>
       <div className="wrp-outer">
         <div className="wrp-inner-instruction">
-          <div className="header">
+          <div className="header-logo">
             <div className="header-title">DISC Test</div>
-
-            <div style={{ alignItems: "center", display: "flex" }}>
-              <img src={logo} width="70" height="60" alt="icon" />
-            </div>
           </div>
           <div className="wrp-intruction">
             <div className="header-intruction">Ikuti Petunjuk </div>

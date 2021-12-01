@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import logo from "../images/logo192.png";
 import bg from "../images/picBc.png";
 
@@ -25,9 +24,6 @@ const Home = () => {
           >
             <img src={bg} alt="icon" className="bg" />
           </div>
-          <Link to="/registration" className="button">
-            <div className="row-button">Start</div>
-          </Link>
         </div>
       </div>
     </>

@@ -69,6 +69,10 @@
   background-color: #e7e7e7;
   border-radius: 25px;
 }
+.wrp-login {
+  padding: 0px 20px 10px 20px;
+  align-items: center;
+}
 
 .wrp-inner-instruction {
   max-width: 500px;
@@ -147,8 +151,28 @@ html {
   justify-content: center;
   align-items: center;
   display: flex;
-  padding: 2rem 0 0 0;
-  margin: 20px;
+  width: auto;
+  /* background-color: #00b4cc; */
+}
+
+.header-logo {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 2rem 0 1rem 0;
+  margin: 20px 20px 0px 20px;
+  width: auto;
+  /* background-color: #00b4cc; */
+}
+
+.header-logo-login {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 2rem 0 2rem 0;
+  margin: 20px 20px 0px 20px;
   width: auto;
   /* background-color: #00b4cc; */
 }
@@ -173,6 +197,15 @@ html {
   object-fit: contain;
 }
 
+.gender {
+  padding: 20px 50px 10px 45px;
+}
+
+.datePick {
+  padding: 10px 50px 20px 45px;
+  -webkit-appearance: none;
+}
+
 .button {
   display: flex;
   flex-direction: column;
@@ -193,7 +226,6 @@ html {
 .row {
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding-top: 2rem;
   max-width: 100%;
 }
@@ -300,7 +332,7 @@ html {
 }
 
 .complex-swipeable-list__item-content-left {
-  background-color: #4bf241;
+  background-color: rgb(56 224 136);
   color: white;
   flex: 1;
   height: 100%;
@@ -310,7 +342,7 @@ html {
 }
 
 .complex-swipeable-list__item-content-right {
-  background-color: #f2414d;
+  background-color: rgba(253, 187, 45, 1);
   color: white;
   flex: 1;
   height: 100%;
@@ -351,7 +383,7 @@ html {
 }
 
 .complex-swipeable-list__item-False {
-  background-color: #84e77f;
+  background-color: rgb(56 224 136);
   padding: 10px;
   border-bottom: 1px solid #c4c4c4;
   flex: 1;
@@ -361,7 +393,7 @@ html {
 }
 
 .complex-swipeable-list__item-False2 {
-  background-color: #ec4b56;
+  background-color: rgba(253, 187, 45, 1);
   padding: 10px;
   border-bottom: 1px solid #c4c4c4;
   flex: 1;
@@ -423,7 +455,7 @@ form {
   flex-direction: column;
   background-color: white;
 }
-input,
+/* input,
 /* button {
   margin: 5px;
 } */
@@ -436,31 +468,28 @@ input[type="password"],
 textarea,
 select {
   font-size: 16px;
-  height: 38px;
-  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  height: 40px;
+  padding: 14px; /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: #fff;
   border: 1px solid #d1d1d1;
   border-radius: 4px;
   box-shadow: none;
   box-sizing: border-box;
+  width: 100%;
 }
 input[type="text"]:focus,
 input[type="password"]:focus,
 textarea:focus {
-  border: 1px solid #2bcc9e;
+  border: 1px solid white;
   outline: 0;
 }
 
 .row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 2rem;
-  max-width: 100%;
+  padding: 0 40px 0 40px;
 }
 
 .row input {
-  width: 80%;
+  width: 100%;
   box-sizing: border-box;
   border: none;
   font-size: 16px;
@@ -471,7 +500,7 @@ textarea:focus {
 }
 
 .row input:focus {
-  box-shadow: inset 0px -3px 0px 0px rgba(34, 193, 195, 0.7);
+  box-shadow: inset 0px -3px 0px 0px white;
   outline: none;
 }
 
@@ -487,15 +516,22 @@ textarea:focus {
 
 .label1 {
   align-self: start;
-  padding-left: 3.5rem;
+  padding-left: 0.5rem;
   padding-bottom: 0.5rem;
   color: rgba(80, 75, 75, 0.9);
 }
 
 .label2 {
   align-self: start;
-  padding-left: 3.5rem;
+  padding-left: 0.5rem;
   padding-bottom: 0.5rem;
   margin-top: 10px;
+  color: rgba(80, 75, 75, 0.9);
+}
+
+.label3 {
+  align-self: start;
+  padding-left: 0.5rem;
+  padding-bottom: 0.5rem;
   color: rgba(80, 75, 75, 0.9);
 }
