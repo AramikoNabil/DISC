@@ -1,9 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 //import logo from "../images/logo.jpg";
 import icon from "../images/google-drive-document.png";
 
-const Instruction = () => {
+const Instruction = (props) => {
+  const routeChange = () => {
+    let path = "/test";
+    props.history.push(path);
+  };
   return (
     <>
       <div className="wrp-outer">
@@ -80,9 +83,11 @@ const Instruction = () => {
               </p>
             </div>
           </div>
-          <Link to="/test" className="button">
-            <button className="row-button">Next</button>
-          </Link>
+          <div className="button">
+            <div className="row-button" onClick={routeChange}>
+              Next
+            </div>
+          </div>
         </div>
       </div>
     </>
