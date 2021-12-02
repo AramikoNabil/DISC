@@ -85,7 +85,13 @@ const Login = () => {
       isDate !== ""
     ) {
       setLoading(true);
-      register(isName, isEmail, isGender, isDate)
+      //register(isName, isEmail, isGender, isDate)
+      Axios.post("http://26f6-158-140-191-58.ngrok.io/api/register", {
+        name: isName,
+        email: isEmail,
+        gender: isGender,
+        birthDate: isDate,
+      })
         .then((responseJson) => {
           const api = responseJson;
           if (api) {
