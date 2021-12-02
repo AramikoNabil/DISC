@@ -93,7 +93,7 @@ const Login = () => {
         birthDate: isDate,
       })
         .then((responseJson) => {
-          const api = responseJson;
+          const api = responseJson.data;
           if (api) {
             if (api.status === "success") {
               localStorage.setItem("userId", api.user_id);
