@@ -103,7 +103,6 @@ const Login = () => {
               setGender("");
               setDate("");
               Go_To();
-              setLoading(false);
             }
           }
         })
