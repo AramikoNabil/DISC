@@ -14,7 +14,7 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { useStateWithCallbackLazy } from "use-state-with-callback";
 import moment from "moment";
-//import { register } from "../services/authService";
+import { register } from "../services/authService";
 
 const Login = () => {
   const [isDate, setDate] = useState("");
@@ -85,13 +85,13 @@ const Login = () => {
       isDate !== ""
     ) {
       setLoading(true);
-      //register(isName, isEmail, isGender, isDate)
-      Axios.post("http://26f6-158-140-191-58.ngrok.io/api/register", {
-        name: isName,
-        email: isEmail,
-        gender: isGender,
-        birthDate: isDate,
-      })
+      register(isName, isEmail, isGender, isDate)
+        // Axios.post("https://26f6-158-140-191-58.ngrok.io/api/register", {
+        //   name: isName,
+        //   email: isEmail,
+        //   gender: isGender,
+        //   birthDate: isDate,
+        // })
         .then((responseJson) => {
           const api = responseJson.data;
           if (api) {
