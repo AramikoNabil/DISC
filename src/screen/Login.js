@@ -14,6 +14,7 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { useStateWithCallbackLazy } from "use-state-with-callback";
 import moment from "moment";
+import { register } from "../services/authService";
 
 const Login = () => {
   const [isDate, setDate] = useState("");
@@ -84,12 +85,13 @@ const Login = () => {
       isDate !== ""
     ) {
       setLoading(true);
-      Axios.post("https://d92f-158-140-191-58.ngrok.io/api/register", {
-        name: isName,
-        email: isEmail,
-        gender: isGender,
-        birthDate: isDate,
-      })
+      register(isName, isEmail, isGender, isDate)
+        // Axios.post("http://26f6-158-140-191-58.ngrok.io/api/register", {
+        //   name: isName,
+        //   email: isEmail,
+        //   gender: isGender,
+        //   birthDate: isDate,
+        // })
         .then((responseJson) => {
           const api = responseJson.data;
           if (api) {
@@ -143,7 +145,7 @@ const Login = () => {
       <div className="wrp-login">
         <div className="header-logo-login">
           <div style={{ alignItems: "center", display: "flex" }}>
-            <img src={logo} width="90" height="100" alt="icon" />
+            <img src={logo} width="90" height="110" alt="icon" />
           </div>
         </div>
         <div noValidate autoComplete="off" className="row">

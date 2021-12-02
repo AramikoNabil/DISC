@@ -182,6 +182,11 @@ html {
   font-size: 2rem;
 }
 
+.header-title-finish {
+  font-family: "open sans", sans-serif;
+  font-size: 1.5rem;
+}
+
 .header-intruction {
   font-family: "open sans", sans-serif;
   font-size: 1.5rem;

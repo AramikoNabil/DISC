@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import logo from "../images/logo192.png";
 import bg from "../images/picBc.png";
 
-const Home = () => {
+const Home = (props) => {
+  const routeChange = () => {
+    let path = "/registration";
+    props.history.push(path);
+  };
   return (
     <>
       <div className="wrp-outer">
@@ -25,9 +29,11 @@ const Home = () => {
           >
             <img src={bg} alt="icon" className="bg" />
           </div>
-          <Link to="/registration" className="button">
-            <div className="row-button">Start</div>
-          </Link>
+          <div className="button">
+            <div className="row-button" onClick={routeChange}>
+              Start
+            </div>
+          </div>
         </div>
       </div>
     </>

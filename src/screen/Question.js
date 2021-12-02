@@ -9,6 +9,10 @@ import {
 import "@sandstreamdev/react-swipeable-list/dist/styles.css";
 import ComplexSwipeContent from "../component/swipeContent";
 import Loading from "../component/PreLoader";
+import CircularProgress from "@mui/material/CircularProgress";
+import { sendAnswer } from "../services/fetchQuestion/postData";
+import { sendFinishAnswer } from "../services/fetchQuestion/postData";
+import { getAllQuestion } from "../services/fetchQuestion/getData";
 
 var userId = localStorage.getItem("userId");
 var token = localStorage.getItem("token");
@@ -39,21 +43,24 @@ const Question = (props) => {
 
   const getQuestion = async () => {
     setLoadingLogo(true);
-    try {
-      const response = await Axios.get(
-        `https://d92f-158-140-191-58.ngrok.io/api/questions`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+    getAllQuestion
+      .then((responseJson) => {
+        const response = responseJson.data;
+        if (response) {
+          setDataQuestion(response.data);
+          setLoadingLogo(false);
         }
-      );
+      })
+      // const response = await Axios.get(
+      //   `https://d92f-158-140-191-58.ngrok.io/api/questions`,
+      //   {
+      //     headers: {
+      //       Authorization: `Bearer ${token}`,
+      //     },
+      //   }
+      // );
 
-      if (response) {
-        setDataQuestion(response.data);
-        setLoadingLogo(false);
-      }
-    } catch (error) {}
+      .catch((error) => {});
   };
 
   const swipeRightOptions = (index) => ({
@@ -99,20 +106,21 @@ const Question = (props) => {
   const handleAnswerOptionClick = () => {
     if (answer1 !== "" && answer2 !== "") {
       setLoading(true);
-      Axios.post(
-        "https://d92f-158-140-191-58.ngrok.io/api/answer",
-        {
-          userId: user,
-          questionNumber: currentQuestion + 1,
-          answer1: answer1,
-          answer2: answer2,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      )
+      sendAnswer(user, currentQuestion + 1, answer1, answer2)
+        // Axios.post(
+        //   "https://d92f-158-140-191-58.ngrok.io/api/answer",
+        //   {
+        //     userId: user,
+        //     questionNumber: currentQuestion + 1,
+        //     answer1: answer1,
+        //     answer2: answer2,
+        //   },
+        //   {
+        //     headers: {
+        //       Authorization: `Bearer ${token}`,
+        //     },
+        //   }
+        // )
         .then((responseJson) => {
           const api = responseJson.data;
           if (api) {
@@ -140,20 +148,21 @@ const Question = (props) => {
   const handleAnswerFinishClick = () => {
     if (answer1 !== "" && answer2 !== "") {
       setLoading(true);
-      Axios.post(
-        "https://d92f-158-140-191-58.ngrok.io/api/answer",
-        {
-          userId: user,
-          questionNumber: currentQuestion + 1,
-          answer1: answer1,
-          answer2: answer2,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      )
+      sendFinishAnswer(user, currentQuestion + 1, answer1, answer2)
+        // Axios.post(
+        //   "https://d92f-158-140-191-58.ngrok.io/api/answer",
+        //   {
+        //     userId: user,
+        //     questionNumber: currentQuestion + 1,
+        //     answer1: answer1,
+        //     answer2: answer2,
+        //   },
+        //   {
+        //     headers: {
+        //       Authorization: `Bearer ${token}`,
+        //     },
+        //   }
+        // )
         .then((responseJson) => {
           const api = responseJson.data;
           if (api) {
@@ -161,8 +170,10 @@ const Question = (props) => {
               setAnswer1("");
               setAnswer2("");
               setLoading(false);
+              setLoadingLogo(true);
               localStorage.clear();
-              window.location = "/finishTest";
+              window.location = "/finish";
+              setLoadingLogo(false);
               setVer(false);
             }
           }
@@ -186,10 +197,6 @@ const Question = (props) => {
         <div className="wrp-inner-instruction">
           <div className="header-logo">
             <div className="header-title">DISC Test</div>
-            {/* 
-            <div style={{ alignItems: "center", display: "flex" }}>
-              <img src={logo} width="70" height="60" alt="icon" />
-            </div> */}
           </div>
           <span style={{ marginLeft: 30 }}>
             Pernyataan {currentQuestion + 1}
@@ -229,7 +236,11 @@ const Question = (props) => {
                 disabled={!isVer}
                 className="row-button"
               >
-                Finish
+                {isLoading === false ? (
+                  "Finish"
+                ) : (
+                  <CircularProgress size={20} />
+                )}
               </button>
             ) : (
               <button
@@ -237,7 +248,7 @@ const Question = (props) => {
                 disabled={!isVer}
                 className="row-button"
               >
-                Next
+                {isLoading === false ? "Next" : <CircularProgress size={20} />}
               </button>
             )}
           </div>

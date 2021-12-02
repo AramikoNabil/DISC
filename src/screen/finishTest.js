@@ -11,7 +11,7 @@ const Home = () => {
             <img src={logo} width="80" height="90" alt="icon" />
           </div>
           <div className="header">
-            <div className="header-title">Personality Test</div>
+            <div className="header-title-finish">Finished Personality Test</div>
           </div>
           <div
             style={{
