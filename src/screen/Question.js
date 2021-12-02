@@ -43,23 +43,13 @@ const Question = (props) => {
 
   const getQuestion = async () => {
     setLoadingLogo(true);
-    getAllQuestion
-      .then((responseJson) => {
-        const response = responseJson.data;
+    getAllQuestion()
+      .then((response) => {
         if (response) {
-          setDataQuestion(response.data);
+          setDataQuestion(response);
           setLoadingLogo(false);
         }
       })
-      // const response = await Axios.get(
-      //   `https://d92f-158-140-191-58.ngrok.io/api/questions`,
-      //   {
-      //     headers: {
-      //       Authorization: `Bearer ${token}`,
-      //     },
-      //   }
-      // );
-
       .catch((error) => {});
   };
 
@@ -107,22 +97,8 @@ const Question = (props) => {
     if (answer1 !== "" && answer2 !== "") {
       setLoading(true);
       sendAnswer(user, currentQuestion + 1, answer1, answer2)
-        // Axios.post(
-        //   "https://d92f-158-140-191-58.ngrok.io/api/answer",
-        //   {
-        //     userId: user,
-        //     questionNumber: currentQuestion + 1,
-        //     answer1: answer1,
-        //     answer2: answer2,
-        //   },
-        //   {
-        //     headers: {
-        //       Authorization: `Bearer ${token}`,
-        //     },
-        //   }
-        // )
         .then((responseJson) => {
-          const api = responseJson.data;
+          const api = responseJson;
           if (api) {
             if (api.status === "success") {
               setAnswer1("");
@@ -149,22 +125,8 @@ const Question = (props) => {
     if (answer1 !== "" && answer2 !== "") {
       setLoading(true);
       sendFinishAnswer(user, currentQuestion + 1, answer1, answer2)
-        // Axios.post(
-        //   "https://d92f-158-140-191-58.ngrok.io/api/answer",
-        //   {
-        //     userId: user,
-        //     questionNumber: currentQuestion + 1,
-        //     answer1: answer1,
-        //     answer2: answer2,
-        //   },
-        //   {
-        //     headers: {
-        //       Authorization: `Bearer ${token}`,
-        //     },
-        //   }
-        // )
         .then((responseJson) => {
-          const api = responseJson.data;
+          const api = responseJson;
           if (api) {
             if (api.status === "success") {
               setAnswer1("");
