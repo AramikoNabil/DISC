@@ -14,7 +14,7 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { useStateWithCallbackLazy } from "use-state-with-callback";
 import moment from "moment";
-import { register } from "../services/authService";
+//import { register } from "../services/authService";
 
 const Login = () => {
   const [isDate, setDate] = useState("");
