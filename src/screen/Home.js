@@ -13,7 +13,7 @@ const Home = (props) => {
       <div className="wrp-outer">
         <div className="wrp-inner">
           <div className="header-logo">
-            <img src={logo} width="80" height="90" alt="icon" />
+            <img src={logo} width="90" height="110" alt="icon" />
           </div>
           <div className="header">
             <div className="header-title">Personality Test</div>
