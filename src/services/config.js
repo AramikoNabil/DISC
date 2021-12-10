@@ -1,4 +1,4 @@
-export const urlApi = " https://26f6-158-140-191-58.ngrok.io/api";
+export const urlApi = "https://testapi.rapidcareer.id";
 var token = localStorage.getItem("token");
 export const api = (method, path, body = null, file = null) => {
   const headers = new Headers();

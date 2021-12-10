@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import logo from "../images/logo.jpg";
-import Axios from "axios";
 import {
   ActionAnimations,
   SwipeableList,
@@ -15,7 +13,6 @@ import { sendFinishAnswer } from "../services/fetchQuestion/postData";
 import { getAllQuestion } from "../services/fetchQuestion/getData";
 
 var userId = localStorage.getItem("userId");
-var token = localStorage.getItem("token");
 
 const Question = (props) => {
   const [questions] = useState(

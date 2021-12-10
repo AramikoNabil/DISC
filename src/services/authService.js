@@ -1,4 +1,4 @@
-export const urlApi = " https://26f6-158-140-191-58.ngrok.io/api";
+import { urlApi } from "./config";
 
 export const api = (method, path, body = null, file = null) => {
   const headers = new Headers();

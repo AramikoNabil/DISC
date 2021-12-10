@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import logo from "../images/logo192.png";
 import "react-datepicker/dist/react-datepicker.css";
 import Loading from "../component/PreLoader";
-import Axios from "axios";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import MenuItem from "@mui/material/MenuItem";
@@ -28,7 +27,6 @@ const Login = () => {
   const [genderError, setErrorGender] = useStateWithCallbackLazy("");
   const [genderErrorBool, setErrorGenderBool] = useStateWithCallbackLazy(true);
   const [isLoading, setLoading] = useState(false);
-  const [btn, setBtn] = useState(false);
   const [isError, setError] = useState("");
   const [open, setOpen] = React.useState(false);
 

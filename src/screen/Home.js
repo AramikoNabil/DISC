@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import logo from "../images/logo192.png";
 import bg from "../images/picBc.png";
 
@@ -8,6 +7,7 @@ const Home = (props) => {
     let path = "/registration";
     props.history.push(path);
   };
+
   return (
     <>
       <div className="wrp-outer">
@@ -18,15 +18,7 @@ const Home = (props) => {
           <div className="header">
             <div className="header-title">Personality Test</div>
           </div>
-          <div
-            style={{
-              justifyContent: "center",
-              alignItems: "center",
-              display: "flex",
-              width: "auto",
-              height: 400,
-            }}
-          >
+          <div className="under-title">
             <img src={bg} alt="icon" className="bg" />
           </div>
           <div className="button">
