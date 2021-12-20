@@ -1,4 +1,4 @@
-export const urlApi = "https://202.157.186.156:90/rapid_tech/public/api";
+export const urlApi = "http://202.157.186.156:90/rapid_tech/public/api";
 
 var token = localStorage.getItem("token");
 export const api = (method, path, body = null, file = null) => {
