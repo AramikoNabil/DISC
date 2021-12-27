@@ -131,7 +131,8 @@ const Question = (props) => {
               setLoading(false);
               setLoadingLogo(true);
               localStorage.clear();
-              window.location = "/finish";
+              let path = "/finish";
+              props.history.push(path);
               setLoadingLogo(false);
               setVer(false);
             }
