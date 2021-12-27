@@ -15,7 +15,7 @@ import { useStateWithCallbackLazy } from "use-state-with-callback";
 import moment from "moment";
 import { register } from "../services/authService";
 
-const Login = () => {
+const Login = (props) => {
   const [isDate, setDate] = useState("");
   const [isName, setName] = useStateWithCallbackLazy("");
   const [nameError, setErrorName] = useStateWithCallbackLazy("");
@@ -113,7 +113,8 @@ const Login = () => {
 
   const Go_To = () => {
     setTimeout(() => {
-      window.location = "/instruction";
+      let path = "/instruction";
+      props.history.push(path);
     }, 300);
   };
 
