@@ -11,6 +11,7 @@ import TextField from "@mui/material/TextField";
 import DatePicker from "@mui/lab/DatePicker";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import { useHistory } from "react-router-dom";
 import { useStateWithCallbackLazy } from "use-state-with-callback";
 import moment from "moment";
 import { register } from "../services/authService";
@@ -111,10 +112,11 @@ const Login = (props) => {
     }
   };
 
+  const history = useHistory();
   const Go_To = () => {
     setTimeout(() => {
       let path = "/instruction";
-      props.history.push(path);
+      history.push(path);
     }, 500);
   };
 

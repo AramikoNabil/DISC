@@ -1,7 +1,7 @@
 export const urlApi = "http://202.157.186.156:90/rapid_tech/public/api";
 
-var token = localStorage.getItem("token");
 export const api = (method, path, body = null, file = null) => {
+  var token = localStorage.getItem("token");
   const headers = new Headers();
   headers.append("Accept", "application/json");
   !file && headers.append("Content-Type", "application/json");

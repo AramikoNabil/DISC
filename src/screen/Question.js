@@ -12,9 +12,8 @@ import { sendAnswer } from "../services/fetchQuestion/postData";
 import { sendFinishAnswer } from "../services/fetchQuestion/postData";
 import { getAllQuestion } from "../services/fetchQuestion/getData";
 
-var userId = localStorage.getItem("userId");
-
 const Question = (props) => {
+  var userId = localStorage.getItem("userId");
   const [questions] = useState(
     "Geser Kanan yang paling menggambarkan diri Anda, Geser Kiri yang paling tidak menggambarkan diri Anda :"
   );
@@ -42,7 +41,7 @@ const Question = (props) => {
     setLoadingLogo(true);
     getAllQuestion()
       .then((response) => {
-        if (response) {
+        if (response !== null) {
           setDataQuestion(response);
           setLoadingLogo(false);
         }
