@@ -115,7 +115,7 @@ const Login = (props) => {
     setTimeout(() => {
       let path = "/instruction";
       props.history.push(path);
-    }, 300);
+    }, 500);
   };
 
   const handleClose = (event, reason) => {
