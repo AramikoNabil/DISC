@@ -1,6 +1,15 @@
-import { Home, Instruction, test, Login, finish, loginAdmin } from "./Route";
+import {
+  Home,
+  Instruction,
+  test,
+  Login,
+  finish,
+  loginAdmin,
+  Result,
+} from "./Route";
 import Wrapper from "../component/Wrapper";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PrivateRoute from "./privateRoute";
 
 function AppRouter() {
   return (
@@ -12,6 +21,8 @@ function AppRouter() {
         <Route path="/test" component={test} />
         <Route path="/finish" component={finish} />
         <Route path="/admin" component={Wrapper(loginAdmin)} />
+        <PrivateRoute path="/result" component={Result} />
+        {/* <Route path="/result" component={Result} /> */}
       </Switch>
     </Router>
   );

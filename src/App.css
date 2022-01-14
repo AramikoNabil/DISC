@@ -62,7 +62,7 @@
 .wrp-inner {
   max-width: 500px;
   min-width: 350px;
-  max-height: 700px;
+  /* max-height: 700px; */
   width: 30%;
   height: 60%;
   margin: 20px auto;
@@ -325,10 +325,40 @@ html {
   opacity: 0.8;
 }
 
+.listEmail {
+  display: flex;
+  padding: 2px;
+  color: #12618f;
+  flex: 1;
+}
+.buttonPdf {
+  line-height: 20px;
+  padding: 4px;
+  text-align: center;
+  border-radius: 8px;
+  max-width: 40%;
+  height: 36px;
+  font-size: 1rem;
+  color: white;
+  font-weight: 450;
+  background: rgb(34, 193, 195);
+  border: 0px;
+  cursor: pointer;
+  transition: opacity 0.25s ease-out;
+  float: right;
+}
+.listResult {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(223, 221, 221);
+}
+
 .list {
   flex-direction: row;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid rgb(223, 221, 221);
 }
 
 .answer-section {

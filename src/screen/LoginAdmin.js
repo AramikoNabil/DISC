@@ -15,7 +15,6 @@ const Login = (props) => {
   const [isEmail, setEmail] = useStateWithCallbackLazy("");
   const [errorEmail, setErrorEmail] = useStateWithCallbackLazy("");
   const [errorEmailBool, setErrorEmailBool] = useStateWithCallbackLazy(true);
-  const [isGender, setGender] = useStateWithCallbackLazy("");
   const [isLoading, setLoading] = useState(false);
   const [isError, setError] = useState("");
   const [open, setOpen] = React.useState(false);
@@ -50,7 +49,7 @@ const Login = (props) => {
   };
 
   const Create = (e) => {
-    if (errorEmailBool !== true && isName !== "" && isGender !== "") {
+    if (errorEmailBool !== true && isName !== "") {
       setLoading(true);
       register(isName, isEmail)
         .then((responseJson) => {
@@ -108,14 +107,6 @@ const Login = (props) => {
           </div>
         </div>
         <div noValidate autoComplete="off" className="row">
-          <div className="label1">Nama Lengkap*</div>
-          <TextField
-            autoComplete="off"
-            error={nameErrorBool}
-            defaultValue={isName}
-            helperText={nameError}
-            onChange={handleChangeName}
-          />
           <div className="label2">Email*</div>
 
           <TextField
@@ -125,6 +116,14 @@ const Login = (props) => {
             onChange={handleChangeEmail}
             helperText={errorEmail}
             onBeforeInput={handleChangeEmail}
+          />
+          <div className="label1">Password*</div>
+          <TextField
+            autoComplete="off"
+            error={nameErrorBool}
+            defaultValue={isName}
+            helperText={nameError}
+            onChange={handleChangeName}
           />
         </div>
       </div>
