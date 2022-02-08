@@ -39,7 +39,7 @@ const Login = (props) => {
   const handleChangeName = (event) => {
     setName(event.target.value.toString().trim(), (isName) => {
       if (isName.trim().length < 1) {
-        setErrorName("Name is required.");
+        setErrorName("Password is required.");
         setErrorNameBool(true);
       } else {
         setErrorName("");

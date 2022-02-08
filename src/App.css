@@ -50,6 +50,10 @@
   margin-top: 200px;
 }
 
+.header-result {
+  float: left;
+}
+
 /* .wrp-outer {
   display: flex;
   color: "white";
@@ -68,6 +72,17 @@
   margin: 20px auto;
   background-color: #e7e7e7;
   border-radius: 25px;
+}
+
+.wrp-inner-result {
+  max-width: 900px;
+  min-width: 350px;
+  /* max-height: 700px; */
+  height: 60%;
+  margin: 20px auto;
+  background-color: #e7e7e7;
+  border-radius: 25px;
+  padding: 10px 40px 0px 40px;
 }
 .wrp-login {
   padding: 0px 20px 10px 20px;
@@ -113,6 +128,11 @@
     margin: 40px auto;
     min-width: 350px;
   }
+
+  .wrp-inner-result {
+    min-width: 280px;
+    margin-bottom: 4rem;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -155,6 +175,17 @@ html {
   /* background-color: #00b4cc; */
 }
 
+.header-title-result {
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.wrapper-result {
+  margin-top: 10rem;
+}
+
 .header-logo {
   flex-direction: row;
   justify-content: center;
@@ -164,6 +195,21 @@ html {
   margin: 20px 20px 0px 20px;
   width: auto;
   /* background-color: #00b4cc; */
+}
+.header-logo-result {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 2rem 0 1rem 0;
+  margin: 5px 0px 0px 10px;
+  width: auto;
+  /* background-color: #00b4cc; */
+}
+.header-menu-result {
+  float: right;
+  padding: 2rem 0 1rem 0;
+  margin: 30px 15px 0px 10px;
 }
 
 .header-logo-login {
@@ -180,6 +226,11 @@ html {
 .header-title {
   font-family: "open sans", sans-serif;
   font-size: 2rem;
+}
+.header-text-result {
+  font-family: "open sans", sans-serif;
+  font-size: 2rem;
+  text-decoration: underline;
 }
 
 .header-title-finish {
@@ -333,11 +384,10 @@ html {
 }
 .buttonPdf {
   line-height: 20px;
-  padding: 4px;
   text-align: center;
   border-radius: 8px;
-  max-width: 40%;
-  height: 36px;
+  max-width: 80%;
+  height: 40px;
   font-size: 1rem;
   color: white;
   font-weight: 450;
@@ -345,7 +395,7 @@ html {
   border: 0px;
   cursor: pointer;
   transition: opacity 0.25s ease-out;
-  float: right;
+  margin-left: 2rem;
 }
 .listResult {
   flex-direction: row;
@@ -579,4 +629,10 @@ textarea:focus {
   padding-left: 0.5rem;
   padding-bottom: 0.5rem;
   color: rgba(80, 75, 75, 0.9);
+}
+
+@media print {
+  #printPageButton {
+    display: none;
+  }
 }
