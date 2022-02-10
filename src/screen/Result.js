@@ -74,7 +74,6 @@ const Result = (props) => {
   };
 
   const getData = (e, dataUser) => {
-    openLoading();
     if (dataUser !== []) {
       setDataUserChart(dataUser);
       getDataChart(dataUser[0])
@@ -164,14 +163,8 @@ const Result = (props) => {
   ];
 
   const handlePrint = () => {
-    html2canvas(document.querySelector("#capture")).then((canvas) => {
-      document.body.appendChild(canvas); // if you want see your screenshot in body.
-      // const imgData = canvas.toDataURL("image/png");
-      // const pdf = new jsPDF();
-      // pdf.addImage(imgData, "PNG", 0, 0);
-      // pdf.save("download.pdf");
-      window.print();
-    });
+    window.print();
+    handleClose();
   };
 
   const handleDownload = () => {
@@ -289,7 +282,7 @@ const Result = (props) => {
 
   const style = {
     position: "absolute",
-    top: "88%",
+    top: "90%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 700,
@@ -331,6 +324,11 @@ const Result = (props) => {
   if (isLoading) {
     return <Loading />;
   }
+  const handleLogOut = () => {
+    localStorage.clear();
+    let path = "/";
+    props.history.push(path);
+  };
 
   return (
     <>
@@ -349,7 +347,7 @@ const Result = (props) => {
                     Menu
                   </Button>
                   <Menu {...bindMenu(popupState)}>
-                    <MenuItem onClick={popupState.close}>Logout</MenuItem>
+                    <MenuItem onClick={handleLogOut}>Logout</MenuItem>
                   </Menu>
                 </React.Fragment>
               )}
