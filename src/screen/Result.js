@@ -326,7 +326,7 @@ const Result = (props) => {
   }
   const handleLogOut = () => {
     localStorage.clear();
-    let path = "/";
+    let path = "/admin";
     props.history.push(path);
   };
 
