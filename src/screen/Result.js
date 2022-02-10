@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // Component
 import logo from "../images/logo192.png";
 import Button from "@mui/material/Button";
@@ -290,7 +290,6 @@ const Result = (props) => {
   const style = {
     position: "absolute",
     top: "88%",
-    // marginTop: "600px",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 700,
@@ -357,9 +356,7 @@ const Result = (props) => {
             </PopupState>
           </div>
           <div className="wrapper-result">
-            <div className="header-title-result">
-              {/* <div className="header-text-result">Result Test</div> */}
-            </div>
+            <div className="header-title-result"></div>
 
             <ThemeProvider theme={theme}>
               <MUIDataTable
