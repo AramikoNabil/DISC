@@ -48,6 +48,7 @@
   justify-content: center;
   background-color: transparent;
   margin-top: 200px;
+  margin-left: 20px;
 }
 
 .header-result {
@@ -203,6 +204,16 @@ html {
   display: flex;
   padding: 2rem 0 1rem 0;
   margin: 5px 0px 0px 10px;
+  width: auto;
+  /* background-color: #00b4cc; */
+}
+.header-logo-modal {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  /* padding: 2rem 0 1rem 0; */
+  margin: 0px 0px 0px 0px;
   width: auto;
   /* background-color: #00b4cc; */
 }
@@ -371,7 +382,25 @@ html {
   cursor: pointer;
   transition: opacity 0.25s ease-out;
 }
-
+.row-button-result {
+  line-height: 40px;
+  text-align: center;
+  border-radius: 25px;
+  width: 40%;
+  height: 40px;
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 700;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    90deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  border: 0px;
+  cursor: pointer;
+  transition: opacity 0.25s ease-out;
+}
 .row-button:hover {
   opacity: 0.8;
 }
@@ -634,5 +663,8 @@ textarea:focus {
 @media print {
   #printPageButton {
     display: none;
+  }
+  #capture {
+    page-break-after: always;
   }
 }
