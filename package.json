@@ -2,7 +2,7 @@
   "name": "disc",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://disc.rapidcareer.id/",
+  "homepage": "http://disc.rapidcareer.id",
   "dependencies": {
     "@emotion/react": "^11.7.0",
     "@emotion/styled": "^11.6.0",
@@ -30,6 +30,7 @@
     "react-swipeable-list": "^1.4.0",
     "react-swipeable-views": "^0.14.0",
     "recharts": "^2.1.8",
+    "serve": "^13.0.2",
     "swiper": "^6.7.5",
     "use-state-with-callback": "^2.0.3",
     "web-vitals": "^1.0.1"
