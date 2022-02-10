@@ -6,10 +6,10 @@ import MuiAlert from "@material-ui/lab/Alert";
 import TextField from "@mui/material/TextField";
 import { useHistory } from "react-router-dom";
 import { useStateWithCallbackLazy } from "use-state-with-callback";
-import { register } from "../services/authService";
+import { loginAdmin } from "../services/authService";
 
 const Login = (props) => {
-  const [isName, setName] = useStateWithCallbackLazy("");
+  const [isPassword, setPassword] = useStateWithCallbackLazy("");
   const [nameError, setErrorName] = useStateWithCallbackLazy("");
   const [nameErrorBool, setErrorNameBool] = useStateWithCallbackLazy(true);
   const [isEmail, setEmail] = useStateWithCallbackLazy("");
@@ -37,8 +37,8 @@ const Login = (props) => {
   };
 
   const handleChangeName = (event) => {
-    setName(event.target.value.toString().trim(), (isName) => {
-      if (isName.trim().length < 1) {
+    setPassword(event.target.value.toString().trim(), (isPassword) => {
+      if (isPassword.trim().length < 1) {
         setErrorName("Password is required.");
         setErrorNameBool(true);
       } else {
@@ -49,25 +49,24 @@ const Login = (props) => {
   };
 
   const Create = (e) => {
-    if (errorEmailBool !== true && isName !== "") {
+    if (errorEmailBool !== true && setErrorNameBool !== true) {
       setLoading(true);
-      register(isName, isEmail)
+      loginAdmin(isEmail, isPassword)
         .then((responseJson) => {
           const api = responseJson;
           if (api) {
             if (api.status === "success") {
-              localStorage.setItem("userId", api.user_id);
-              localStorage.setItem("token", api.token);
+              localStorage.setItem("tokenAdmin", api.access_token);
               setEmail("");
-              setName("");
+              setPassword("");
               Go_To();
             }
           }
         })
         .catch((error) => {
           setEmail("");
-          setName("");
-          setError("Erro! Try again");
+          setPassword("");
+          setError("Error! Try again");
           setLoading(false);
           setOpen(true);
         });
@@ -78,7 +77,7 @@ const Login = (props) => {
   const history = useHistory();
   const Go_To = () => {
     setTimeout(() => {
-      let path = "/";
+      let path = "/result";
       history.push(path);
     }, 500);
   };
@@ -121,7 +120,7 @@ const Login = (props) => {
           <TextField
             autoComplete="off"
             error={nameErrorBool}
-            defaultValue={isName}
+            defaultValue={isPassword}
             helperText={nameError}
             onChange={handleChangeName}
           />

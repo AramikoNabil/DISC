@@ -1,9 +1,12 @@
-import { urlApi } from "./config";
+import { urlApi } from "../config";
 
 export const api = (method, path, body = null, file = null) => {
+  var token = localStorage.getItem("tokenAdmin");
   const headers = new Headers();
   headers.append("Accept", "application/json");
   !file && headers.append("Content-Type", "application/json");
+
+  token !== null && headers.append("Authorization", "Bearer " + token);
 
   const data = fetch(urlApi + path, {
     method: method,
@@ -17,22 +20,10 @@ export const api = (method, path, body = null, file = null) => {
   return data;
 };
 
-export const register = (name, email, gender, birthDate) => {
-  const body = {
-    name,
-    email,
-    gender,
-    birthDate,
-  };
-
-  return api("POST", "/register", body);
+export const getDataChart = (userId) => {
+  return api("GET", `/graph/${userId}`);
 };
 
-export const loginAdmin = (email, password) => {
-  const body = {
-    email,
-    password,
-  };
-
-  return api("POST", "/login", body);
+export const getListDataUser = () => {
+  return api("GET", "/all-user");
 };

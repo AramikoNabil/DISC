@@ -4,8 +4,7 @@ import logo from "../images/logo192.png";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { getListDataUser } from "../services/fetchResult/getListDataUser";
-import { getDataChart } from "../services/fetchResult/getDataChart";
+import { getListDataUser, getDataChart } from "../services/fetchResult";
 import Loading from "../component/PreLoader";
 
 // Package
@@ -23,17 +22,8 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import {
-  BarChart,
-  Bar,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from "recharts";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const Result = (props) => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -49,7 +39,11 @@ const Result = (props) => {
   const [dataGraphTotal3, setDataTotal3] = useState();
   const [dataUserChart, setDataUserChart] = useState([]);
   const [isLoading, setLoading] = useState(false);
+  const [isLoadingModal, setLoadingModal] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const openLoading = () => setLoadingModal(true);
+  const closeLoading = () => setLoadingModal(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -80,31 +74,31 @@ const Result = (props) => {
   };
 
   const getData = (e, dataUser) => {
-    handleOpen();
-    setDataUserChart(dataUser);
-    // setLoading(true);
-    // if (dataUser !== []) {
-    //   setDataUserChart(dataUser);
-    //   getDataChart(dataUser[0])
-    //     .then((response) => {
-    //       if (response !== null) {
-    //         setDataGraph1(response.graph[0].result);
-    //         setDataGraph2(response.graph[1].result);
-    //         setDataGraph3(response.graph[2].result);
-    //         setDataMax1(response.max[0].value);
-    //         setDataMax2(response.max[1].value);
-    //         setDataMax3(response.max[2].value);
-    //         setDataTotal1(response.graph[0].total);
-    //         setDataTotal2(response.graph[1].total);
-    //         setDataTotal3(response.graph[2].total);
-    //         setLoading(false);
-    //         handleOpen();
-    //       }
-    //     })
-    //     .catch((error) => {});
-    // } else {
-    //   setLoading(false);
-    // }
+    openLoading();
+    if (dataUser !== []) {
+      setDataUserChart(dataUser);
+      getDataChart(dataUser[0])
+        .then((response) => {
+          if (response !== null) {
+            setDataGraph1(response.graph[0].result);
+            setDataGraph2(response.graph[1].result);
+            setDataGraph3(response.graph[2].result);
+            setDataMax1(response.max[0].value);
+            setDataMax2(response.max[1].value);
+            setDataMax3(response.max[2].value);
+            setDataTotal1(response.graph[0].total);
+            setDataTotal2(response.graph[1].total);
+            setDataTotal3(response.graph[2].total);
+            closeLoading();
+            handleOpen();
+          }
+        })
+        .catch((error) => {
+          closeLoading();
+        });
+    } else {
+      closeLoading();
+    }
   };
 
   const isMobile = width <= 768;
@@ -295,7 +289,7 @@ const Result = (props) => {
 
   const style = {
     position: "absolute",
-    top: "94%",
+    top: "88%",
     // marginTop: "600px",
     left: "50%",
     transform: "translate(-50%, -50%)",
@@ -332,8 +326,9 @@ const Result = (props) => {
 
   const modalStyle = {
     display: "block",
-    overflow: "auto",
+    overflow: "scroll",
   };
+
   if (isLoading) {
     return <Loading />;
   }
@@ -369,8 +364,8 @@ const Result = (props) => {
             <ThemeProvider theme={theme}>
               <MUIDataTable
                 title={"Result DISC Test"}
-                // data={listData}
-                data={datas}
+                data={listData}
+                // data={datas}
                 columns={columns}
                 options={{
                   selectableRows: false, // <===== will turn off checkboxes in rows
@@ -651,7 +646,15 @@ const Result = (props) => {
                   </div>
 
                   {isMobile ? (
-                    <div className="button"></div>
+                    <div className="button">
+                      <button
+                        id="printPageButton"
+                        onClick={handleClose}
+                        className="row-button-result"
+                      >
+                        Close
+                      </button>
+                    </div>
                   ) : (
                     <div className="button">
                       <button
@@ -664,6 +667,23 @@ const Result = (props) => {
                     </div>
                   )}
                 </Box>
+              </div>
+            </Modal>
+            <Modal
+              open={isLoadingModal}
+              onClose={closeLoading}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <div
+                style={{
+                  justifyContent: "center",
+                  alignItems: "center",
+                  display: "flex",
+                  marginTop: "300px",
+                }}
+              >
+                <CircularProgress size={50} />
               </div>
             </Modal>
             <div className="button"></div>

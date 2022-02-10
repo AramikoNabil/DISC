@@ -1,5 +1,5 @@
 // export const urlApi = "http://202.157.186.156:90/rapid_tech/public/api";
-export const urlApi = "http://6a86-103-119-50-7.ngrok.io/api";
+export const urlApi = "http://acf9-103-119-50-7.ngrok.io/api";
 
 export const api = (method, path, body = null, file = null) => {
   var token = localStorage.getItem("token");
