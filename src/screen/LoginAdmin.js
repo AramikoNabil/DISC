@@ -106,7 +106,7 @@ const Login = (props) => {
           </div>
         </div>
         <div noValidate autoComplete="off" className="row">
-          <div className="label2">Email*</div>
+          <div className="label1">Email*</div>
 
           <TextField
             autoComplete="off"
@@ -116,7 +116,7 @@ const Login = (props) => {
             helperText={errorEmail}
             onBeforeInput={handleChangeEmail}
           />
-          <div className="label1">Password*</div>
+          <div className="label2">Password*</div>
           <TextField
             autoComplete="off"
             error={nameErrorBool}

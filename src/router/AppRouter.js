@@ -21,7 +21,7 @@ function AppRouter() {
         <Route path="/test" component={test} />
         <Route path="/finish" component={finish} />
         <Route path="/admin" component={Wrapper(loginAdmin)} />
-        {/* <PrivateRoute path="/result" component={Result} /> */}
+        <PrivateRoute path="/result" component={Result} />
       </Switch>
     </Router>
   );
